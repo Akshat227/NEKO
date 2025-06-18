@@ -20,9 +20,25 @@ RenderWindow::RenderWindow(const char* p_title, int p_w, int p_h)
 
 }
 
+SDL_Renderer* RenderWindow::getRenderer()
+{
+    return renderer;
+}
+
+void RenderWindow::clear()
+{
+    SDL_RenderClear(renderer);
+}
+
+void RenderWindow::display()
+{
+    SDL_RenderPresent(renderer);
+}
+
+
 void RenderWindow::cleanUp()
 {
-
+    SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
 
 }

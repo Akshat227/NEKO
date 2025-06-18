@@ -14,6 +14,8 @@ int main(int argc, char* args[])
         std::cout << "IMG INITIALISATION FAILED!: " << SDL_GetError << std::endl;
     }
 
+    RenderWindow window("SICI", 600, 600);
+    
     bool gamerunning = true;
 
     SDL_Event event;
@@ -24,15 +26,15 @@ int main(int argc, char* args[])
         {
             if (event.type == SDL_QUIT)
             {
-                gamerunning == false;
+                gamerunning = false;
             }
         }
         
+        window.clear();
+        window.display();
     }
 
 
-
-    RenderWindow window("SICI", 600, 600);
     window.cleanUp();
     SDL_Quit();
 
