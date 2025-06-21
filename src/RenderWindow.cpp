@@ -58,5 +58,17 @@ void RenderWindow::cleanUp()
 }
 void RenderWindow::render(SDL_Texture* p_tex)
 {
-    SDL_RenderCopy(renderer, p_tex, NULL, NULL);
+    SDL_Rect src;
+    src.x = 0;
+    src.y = 0;
+    src.w = 100;
+    src.h = 100;
+
+
+    SDL_Rect dst;
+    dst.x = 300;
+    dst.y = 300;
+    dst.w = 200;
+    dst.h = 200;
+    SDL_RenderCopy(renderer, p_tex, &src, &dst);
 }
