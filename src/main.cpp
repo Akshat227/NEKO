@@ -7,15 +7,17 @@ int main(int argc, char* args[])
 {
     if(SDL_Init(SDL_INIT_VIDEO) > 0)
     {
-        std :: cout << "SDL INITIALISATION FAILED!: " << SDL_GetError << std::endl;
+        std :: cout << "SDL INITIALISATION FAILED!: " << SDL_GetError() << std::endl;
     }
     if(!(IMG_Init(IMG_INIT_PNG)))
     {
-        std::cout << "IMG INITIALISATION FAILED!: " << SDL_GetError << std::endl;
+        std::cout << "IMG INITIALISATION FAILED!: " << SDL_GetError() << std::endl;
     }
 
     RenderWindow window("SICI", 600, 600);
     
+    SDL_Texture* testGround = window.loadTexture("res/gfx/TestGroundTile.png");
+
     bool gamerunning = true;
 
     SDL_Event event;
@@ -31,6 +33,7 @@ int main(int argc, char* args[])
         }
         
         window.clear();
+        window.render(testGround);
         window.display();
     }
 
