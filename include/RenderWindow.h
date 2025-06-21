@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
-
+#include "Entity.h"
 
 class RenderWindow
 {
@@ -14,7 +14,7 @@ public:
         SDL_Texture* loadTexture(const char* p_filepath);
         void clear();                
         void display();
-        void render(SDL_Texture* p_tex);
+        void render(Entity& p_entity);
 private:
         SDL_Window* window;
         SDL_Renderer* renderer;  

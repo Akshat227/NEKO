@@ -2,6 +2,7 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 #include "RenderWindow.h"
+#include "Entity.h"
 
 RenderWindow::RenderWindow(const char* p_title, int p_w, int p_h)
     :window(NULL), renderer(NULL)
@@ -56,19 +57,19 @@ void RenderWindow::cleanUp()
     SDL_DestroyWindow(window);
 
 }
-void RenderWindow::render(SDL_Texture* p_tex)
+void RenderWindow::render(Entity& p_entity)
 {
     SDL_Rect src;
-    src.x = 0;
-    src.y = 0;
-    src.w = 100;
-    src.h = 100;
+    src.x = p_entity.getCurrentFrame().x;
+    src.y = p_entity.getCurrentFrame().y;
+    src.w = p_entity.getCurrentFrame().w;
+    src.h = p_entity.getCurrentFrame().h;
 
 
     SDL_Rect dst;
-    dst.x = 300;
-    dst.y = 300;
-    dst.w = 200;
-    dst.h = 200;
-    SDL_RenderCopy(renderer, p_tex, &src, &dst);
+    dst.x = p_entity.getX() * 4;
+    dst.y = p_entity.getY() * 4;
+    dst.w = p_entity.getCurrentFrame().w * 4;
+    dst.h = p_entity.getCurrentFrame().h * 4;
+    SDL_RenderCopy(renderer, p_entity.getTex(), &src, &dst);
 }
