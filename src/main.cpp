@@ -19,7 +19,10 @@ int main(int argc, char* args[])
     
     SDL_Texture* testGround = window.loadTexture("res/gfx/TestGroundTile.png");
 
-    Entity platform0(30, 30, testGround);
+    Entity entities[2] = {Entity(0, 0, testGround),
+                          Entity(50, 0, testGround)};
+
+
 
     bool gamerunning = true;
 
@@ -36,7 +39,12 @@ int main(int argc, char* args[])
         }
         
         window.clear();
-        window.render(platform0);
+        for (int i = 0; i < 2; i++)
+        {
+            window.render(entities[i]);
+        }
+        
+
         window.display();
     }
 
