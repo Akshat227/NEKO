@@ -1,4 +1,4 @@
-# NEKO
+<h1 align="center">NEKO</h1>
 
 **NEKO** is a lightweight SDL2-based starter kit for building 2D C++ games.  
 It provides a structured base with:
