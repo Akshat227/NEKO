@@ -1,0 +1,29 @@
+# Binaries
+bin/
+*.exe
+*.out
+
+# Object files
+*.o
+*.obj
+
+# SDL cache or temp files
+*.bmp
+*.tmp
+
+# Build system outputs
+*.log
+*.a
+*.so
+*.dll
+
+# IDE stuff
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Ignore test or junk files
+justatextfile.txt
