@@ -1,6 +1,6 @@
-# SICI - Simple SDL2 C++ Init
+# NEKO
 
-**SICI** is a lightweight SDL2-based starter kit for building 2D C++ games.  
+**NEKO** is a lightweight SDL2-based starter kit for building 2D C++ games.  
 It provides a structured base with:
 
 - Entity system
